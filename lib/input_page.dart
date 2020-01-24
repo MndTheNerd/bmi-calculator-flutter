@@ -29,7 +29,7 @@ class _InputPageState extends State<InputPage> {
                     colour: activeCardColor,
                     cardChild: IconContent(
                       mIcon: FontAwesomeIcons.mars,
-                      mText: 'MALE',
+                      label: 'MALE',
                     ),
                   ),
                 ),
@@ -38,7 +38,7 @@ class _InputPageState extends State<InputPage> {
                     colour: activeCardColor,
                     cardChild: IconContent(
                       mIcon: FontAwesomeIcons.venus,
-                      mText: 'FEMALE',
+                      label: 'FEMALE',
                     ),
                   ),
                 )
@@ -75,5 +75,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-
