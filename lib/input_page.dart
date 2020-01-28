@@ -15,6 +15,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
   int weight = 70;
+  int age = 18;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,50 +114,89 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                    child: ReusableCard(
-                  cardChild: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'WEIGHT',
-                        style: kLabelTextStyle,
-                      ),
-                      Text(
-                        weight.toString(),
-                        style: kNumberTextStyle,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          RoundIconButton(
-                            icon: Icons.add,
-                            onTap: () {
-                              setState(() {
-                                weight++;
-                              });
-                            },
-                          ),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          RoundIconButton(
-                            icon: Icons.remove,
-                            onTap: () {
-                              setState(() {
-                                weight--;
-                              });
-                            },
-                          )
-                        ],
-                      ),
-                    ],
+                  child: ReusableCard(
+                    colour: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'WEIGHT',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(
+                              icon: Icons.add,
+                              onTap: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: Icons.remove,
+                              onTap: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  colour: kActiveCardColor,
-                )),
+                ),
                 Expanded(
-                    child: ReusableCard(
-                  colour: kActiveCardColor,
-                ))
+                  child: ReusableCard(
+                    colour: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'AGE',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(
+                              icon: Icons.add,
+                              onTap: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: Icons.remove,
+                              onTap: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -176,7 +216,6 @@ class RoundIconButton extends StatelessWidget {
   RoundIconButton({this.icon, this.onTap});
   final IconData icon;
   final Function onTap;
-  int weight;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
