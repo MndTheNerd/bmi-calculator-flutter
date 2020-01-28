@@ -8,6 +8,7 @@ const Color kAccentColor = Color(0x0FFEA1556);
 const Color kScaffoldBackgroundColor = Color(0x0FF000022);
 const Color kFadedWhite = Color(0xFF8D8E98);
 const Color kFadedAccent = Color(0x029EA1556);
+const Color kGreyColor = Color(0xFF4C4F5E);
 //sizes
 const kBottomContainerHeight = 80.0;
 const double kSizedBoxHeight = 15.0;

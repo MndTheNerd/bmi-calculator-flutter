@@ -14,7 +14,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
-
+  int weight = 70;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,6 +114,43 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                     child: ReusableCard(
+                  cardChild: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'WEIGHT',
+                        style: kLabelTextStyle,
+                      ),
+                      Text(
+                        weight.toString(),
+                        style: kNumberTextStyle,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          RoundIconButton(
+                            icon: Icons.add,
+                            onTap: () {
+                              setState(() {
+                                weight++;
+                              });
+                            },
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          RoundIconButton(
+                            icon: Icons.remove,
+                            onTap: () {
+                              setState(() {
+                                weight--;
+                              });
+                            },
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                   colour: kActiveCardColor,
                 )),
                 Expanded(
@@ -131,6 +168,24 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  RoundIconButton({this.icon, this.onTap});
+  final IconData icon;
+  final Function onTap;
+  int weight;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      elevation: 7.0,
+      child: Icon(icon),
+      onPressed: onTap,
+      constraints: BoxConstraints.tightFor(width: 54.0, height: 54.0),
+      shape: CircleBorder(),
+      fillColor: kGreyColor,
     );
   }
 }
