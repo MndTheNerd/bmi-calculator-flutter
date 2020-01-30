@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'custom_widgets/constants.dart';
 import 'custom_widgets/reusable_card.dart';
 import 'custom_widgets/bottom_button.dart';
+import 'calulator.dart';
 
 class ResultsPage extends StatelessWidget {
-  String textResult = 'overweight';
-  int result = 0;
-  String tip = 'awesome';
+
+  ResultsPage({@required this.bmi,@required this.results, @required this.feedBack });
+
+  final String bmi;
+  final String results;
+  final String feedBack;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,15 +39,15 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    textResult,
+                    results,
                     style: kResultTextStyle,
                   ),
                   Text(
-                    result.toString(),
+                    bmi,
                     style: kResultNumberTextStyle,
                   ),
                   Text(
-                    tip,
+                    feedBack,
                     style: kLabelTextStyle,
                   ),
                 ],
